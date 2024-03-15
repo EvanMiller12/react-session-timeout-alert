@@ -26,7 +26,7 @@ const ReactSessionTimeoutAlert = ({
   const alertClass = ["rst-alert", alertContainerClass];
   const alertConClass = ["rst-alert-content", alertContentClass];
   const actionsClass = ["rst-alert-actions", alertActionsClass];
-  const timerClass = alertTimerCLass || "rst-alert-timer";
+  const timerClass = alertTimerClass || "rst-alert-timer";
   const confirmBtnText = confirmBtn?.text || "Logout";
   const confirmBtnClass = confirmBtn?.class || "rst-btn rst-btn-primary";
   const cancelBtnText = cancelBtn?.text || "Stay Logged In";
@@ -98,7 +98,7 @@ const ReactSessionTimeoutAlert = ({
             <h3 className={timerClass}>
               Time remaining: {millisToMinutesAndSeconds(remainingTime * 1000)}
             </h3>
-            <div className={clsx(alertActionsClass)}>
+            <div className={clsx(actionsClass)}>
               <button className={confirmBtnClass} onClick={handleLogOut}>
                 {confirmBtnText}
               </button>
