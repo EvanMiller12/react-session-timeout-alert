@@ -1,7 +1,10 @@
 {
-  "name": "@codifytools/react-npm-package-boilerplate",
-  "version": "1.0.14",
-  "description": "",
+  "name": "react-session-timeout-alert",
+  "version": "1.0.0",
+  "description": "A Session Timeout Alert alert component to display after a set idle timeout of a user",
+  "publishConfig": {
+    "access": "restricted"
+  },
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -13,22 +16,25 @@
   },
   "keywords": [
     "react",
-    "storybook",
-    "rollup",
-    "boilerplate"
+    "timeout",
+    "session timeout",
+    "session timeout alert",
+    "session timeout modal"
   ],
-  "author": "Juan Pablo Mejia Duque",
+  "author": "Evan Miller",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codifytools/react-npm-package-boilerplate.git"
+    "url": "git+https://github.com/EvanMiller12/react-session-timeout-alert.git"
   },
   "license": "MIT",
   "engines": {
     "node": "20"
   },
   "peerDependencies": {
+    "clsx": "^2.1.0",
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "react-idle-timer": "^5.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
@@ -39,9 +45,12 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@storybook/react-vite": "^7.6.6",
+    "clsx": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-idle-timer": "^5.7.2",
     "rollup": "^4.9.2",
+    "rollup-plugin-import-css": "^3.5.0",
     "storybook": "^7.6.6"
   }
 }

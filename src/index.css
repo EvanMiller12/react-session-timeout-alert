@@ -1,0 +1,52 @@
+.rst-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  backdrop-filter: blur(5px); /* apply blur filter */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rst-alert-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  width: 50%;
+}
+.rst-alert-title {
+  color: black;
+  margin-top: 0;
+}
+.rst-alert-desc {
+  color: black;
+  margin-bottom: 20px;
+}
+.rst-alert-timer {
+  color: black;
+}
+.rst-btn {
+  width: 50%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.rst-btn-primary {
+  color: white;
+  background-color: blue;
+}
+.rst-btn-danger {
+  margin-right: 0;
+  color: white;
+  background-color: red;
+}
+.rst-btn-primary:hover,
+.rst-btn-danger:hover {
+  background-color: #45a049;
+}
