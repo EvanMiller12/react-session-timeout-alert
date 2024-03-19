@@ -1,7 +1,13 @@
 # React Session Timeout Alert
 
+[![NPM version](https://img.shields.io/npm/v/react-session-timeout-alert.svg?style=flat)](https://npmjs.com/package/react-session-timeout-alert)
+![npm bundle size](https://img.shields.io/bundlephobia/min/react-session-timeout-alert?style=flat-square)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-session-timeout-alert?style=flat-square)
+![npm downloads](https://img.shields.io/npm/dt/react-session-timeout-alert?style=flat-square)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
+
 A Session Timeout Alert component to display after a set idle time for a user.
-The primary purpose for the alert is to logout a authenticated user after a set amount of no interaction with the UI.
+The primary purpose for the alert is to logout a authenticated user after a set time of no interaction with the UI.
 
 ## Install
 
