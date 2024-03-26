@@ -14,10 +14,16 @@ export default {
   plugins: [
     babel({
       babelHelpers: "bundled",
-      exclude: "node_modules/**",
+      exclude: ["example/**", "node_modules/**"],
       presets: ["@babel/preset-env", "@babel/preset-react"]
     }),
-    css(),
+    css({
+      output: "index.css",
+      include: "src/index.css",
+      exclude: ["example/**", "node_modules/**"],
+      modules: true,
+      minify: true
+    }),
     resolve(),
     commonjs(),
     terser()
