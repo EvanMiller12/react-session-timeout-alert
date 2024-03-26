@@ -18,10 +18,9 @@ export default {
       presets: ["@babel/preset-env", "@babel/preset-react"]
     }),
     css({
-      output: "index.css",
       include: "src/index.css",
+      output: "index.css",
       exclude: ["example/**", "node_modules/**"],
-      modules: true,
       minify: true
     }),
     resolve(),
