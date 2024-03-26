@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { clsx } from 'clsx';
 import { useIdle } from "./hooks/useIdleTimer.js";
 import "./index.css";
