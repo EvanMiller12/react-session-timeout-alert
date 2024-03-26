@@ -6,4 +6,4 @@ export default {
   title: "Session Timeout Alert"
 };
 
-export const Placeholder = () => <ReactSessionTimeoutAlert />;
+export const Placeholder = () => <ReactSessionTimeoutAlert idleTime={0.1} />;
