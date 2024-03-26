@@ -39,14 +39,16 @@
 }
 .rst-btn-primary {
   color: white;
-  background-color: blue;
+  background-color: #03c04a;
 }
 .rst-btn-danger {
   margin-right: 0;
   color: white;
-  background-color: red;
+  background-color: #ff3126;
 }
-.rst-btn-primary:hover,
+.rst-btn-primary:hover {
+  background-color: #74b72e;
+}
 .rst-btn-danger:hover {
-  background-color: #45a049;
+  background-color: #c30900;
 }
