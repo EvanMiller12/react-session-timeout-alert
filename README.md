@@ -15,19 +15,19 @@ The primary purpose for the alert is to logout a authenticated user after a set 
 
 ## Available Props
 
-| Name                 | Type     | Default                                                   | Description                                                                                       |
-| -------------------- | -------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| idleTime             | Number   | 5                                                         | Number of minutes before displaying alert modal                                                   |  |
-| modalTimeout         | Number   | 20                                                        | Number of seconds for countdown before hiding alert modal and calling handleSessionTimeout method |
-| alertActionsClass    | String   | rst-alert-actions                                         | Class for Alert Modal actions                                                                     |
-| alertContainerClass  | String   | rst-alert                                                 | Class for Alert Modal container                                                                   |
-| alertContentClass    | String   | rst-alert-content                                         | Class for Alert Modal content                                                                     |
-| alertTimerClass      | String   | rst-alert-timer                                           | Class for Alert Modal timer                                                                       |
-| alertTitle           | String   | null                                                      | Title for Alert Modal                                                                             |
-| alertDescription     | String   | null                                                      | Description for Alert Modal                                                                       |
-| confirmBtn           | Object   | {text: "Logout", class: "rst-btn rst-btn-primary"}        | Title and Text for Alert submit button                                                            |
-| cancelBtn            | Object   | {text: "Stay Logged In", class: "rst-btn rst-btn-danger"} | Title and Text for Alert cancel button                                                            |
-| handleSessionTimeout | Function | () => alert("logging out")                                | Function to call on Alert submit button click or alert timer end                                  |
+| Name                 | Type     | Default                                                                   | Description                                                                                       |
+| -------------------- | -------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| idleTime             | Number   | 5                                                                         | Number of minutes before displaying alert modal                                                   |  |
+| modalTimeout         | Number   | 20                                                                        | Number of seconds for countdown before hiding alert modal and calling handleSessionTimeout method |
+| alertActionsClass    | String   | rst-alert-actions                                                         | Class for Alert Modal actions                                                                     |
+| alertContainerClass  | String   | rst-alert                                                                 | Class for Alert Modal container                                                                   |
+| alertContentClass    | String   | rst-alert-content                                                         | Class for Alert Modal content                                                                     |
+| alertTimerClass      | String   | rst-alert-timer                                                           | Class for Alert Modal timer                                                                       |
+| alertTitle           | String   | null                                                                      | Title for Alert Modal                                                                             |
+| alertDescription     | String   | null                                                                      | Description for Alert Modal                                                                       |
+| confirmBtn           | Object   | {class: "rst-btn rst-btn-primary", text: "Logout", type: "submit"}        | Title and Text for Alert submit button                                                            |
+| cancelBtn            | Object   | {class: "rst-btn rst-btn-danger", text: "Stay Logged In", type: "button"} | Title and Text for Alert cancel button                                                            |
+| handleSessionTimeout | Function | () => alert("logging out")                                                | Function to call on Alert submit button click and alert timer end                                 |
 
 ## Basic Usage
 

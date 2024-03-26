@@ -3,7 +3,6 @@ import { clsx } from 'clsx';
 import { useIdle } from "./hooks/useIdleTimer.js";
 import "./index.css";
 
-// change props to options
 const ReactSessionTimeoutAlert = ({
   idleTime = 5,
   modalTimeout = 20,
@@ -14,12 +13,14 @@ const ReactSessionTimeoutAlert = ({
   alertTitle="",
   alertDescription="",
   confirmBtn = {
+    class: null,
     text: "Logout",
-    class: null
+    type: "submit"
   },
   cancelBtn = {
+    class: null,
     text: "Stay Logged In",
-    class: null
+    type: "button"
   },
   handleSessionTimeout = () => alert("logging out")
 }) => {
@@ -28,9 +29,11 @@ const ReactSessionTimeoutAlert = ({
   const actionsClass = ["rst-alert-actions", alertActionsClass];
   const timerClass = alertTimerClass || "rst-alert-timer";
   const confirmBtnText = confirmBtn?.text || "Logout";
-  const confirmBtnClass = confirmBtn?.class || "rst-btn rst-btn-primary";
+  const confirmBtnType = confirmBtn?.type || "submit";
+  const confirmBtnClass = confirmBtn?.class || "rst-btn rst-btn-danger";
   const cancelBtnText = cancelBtn?.text || "Stay Logged In";
-  const cancelBtnClass = cancelBtn?.class || "rst-btn rst-btn-danger";
+  const cancelBtnClass = cancelBtn?.class || "rst-btn rst-btn-primary";
+  const cancelBtnType = cancelBtn?.type || "button";
 
   const [showModal, setShowModal] = useState(false);
   const [remainingTime, setRemainingTime] = useState(0);
@@ -99,10 +102,15 @@ const ReactSessionTimeoutAlert = ({
               Time remaining: {millisToMinutesAndSeconds(remainingTime * 1000)}
             </h3>
             <div className={clsx(actionsClass)}>
-              <button className={confirmBtnClass} onClick={handleLogOut}>
+              <button
+                type={confirmBtnType}
+                className={confirmBtnClass} 
+                onClick={handleLogOut}
+              >
                 {confirmBtnText}
               </button>
               <button
+                type={cancelBtnType}
                 className={cancelBtnClass}
                 onClick={handleStayLoggedIn}
               >
