@@ -1,8 +1,6 @@
 # React Session Timeout Alert
 
 [![NPM version](https://img.shields.io/npm/v/react-session-timeout-alert.svg?style=flat)](https://npmjs.com/package/react-session-timeout-alert)
-![npm bundle size](https://img.shields.io/bundlephobia/min/react-session-timeout-alert?style=flat-square)
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-session-timeout-alert?style=flat-square)
 ![npm downloads](https://img.shields.io/npm/dt/react-session-timeout-alert?style=flat-square)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 
@@ -33,6 +31,7 @@ The primary purpose for the alert is to logout a authenticated user after a set 
 
 ```react
 import { ReactSessionTimeoutAlert } from 'react-session-timeout-alert';
+import "react-session-timeout-alert/index.css";
 
 <ReactSessionTimeoutAlert
   idleTime={5}
@@ -46,6 +45,30 @@ import { ReactSessionTimeoutAlert } from 'react-session-timeout-alert';
   handleSessionTimeout = {() => alert("logging out")}
 />
 ```
+
+## Story Book
+`git clone git@github.com:EvanMiller12/react-session-timeout-alert.git`
+
+`cd react-session-timeout-alert`
+
+make sure to use Node v20
+
+`npm install`
+
+`npm run storybook`
+
+
+## Simple Example
+
+`git clone git@github.com:EvanMiller12/react-session-timeout-alert.git`
+
+`cd react-session-timeout-alert/example`
+
+make sure to use Node >= 14
+
+`npm install`
+
+`npm run start`
 
 ### License
 
