@@ -31,7 +31,6 @@ The primary purpose for the alert is to logout a authenticated user after a set 
 
 ```react
 import { ReactSessionTimeoutAlert } from 'react-session-timeout-alert';
-import "react-session-timeout-alert/index.css";
 
 <ReactSessionTimeoutAlert
   idleTime={5}
