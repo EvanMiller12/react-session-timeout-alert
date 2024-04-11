@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-\*make sure to install and/or use node version >= 14
+\*make sure to install and/or use node version >= 20
 
 ### `npm install`
 
