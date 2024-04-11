@@ -4,36 +4,37 @@ import { useIdle } from "./hooks/useIdleTimer.js";
 import "./index.css";
 
 const ReactSessionTimeoutAlert = ({
-  idleTime = 5,
-  modalTimeout = 20,
   alertActionsClass="",
   alertContainerClass="",
   alertContentClass="",
   alertTimerClass="",
   alertTitle="",
   alertDescription="",
-  confirmBtn = {
-    class: null,
-    text: "Logout",
-    type: "submit"
-  },
   cancelBtn = {
     class: null,
     text: "Stay Logged In",
     type: "button"
   },
-  handleSessionTimeout = () => alert("logging out")
+  confirmBtn = {
+    class: null,
+    text: "Logout",
+    type: "submit"
+  },
+  debounceTime = 500,
+  handleSessionTimeout = () => alert("logging out"),
+  idleTime = 5,
+  modalTimeout = 20
 }) => {
   const alertClass = ["rst-alert", alertContainerClass];
   const alertConClass = ["rst-alert-content", alertContentClass];
   const actionsClass = ["rst-alert-actions", alertActionsClass];
-  const timerClass = alertTimerClass || "rst-alert-timer";
   const confirmBtnText = confirmBtn?.text || "Logout";
   const confirmBtnType = confirmBtn?.type || "submit";
   const confirmBtnClass = confirmBtn?.class || "rst-btn rst-btn-danger";
   const cancelBtnText = cancelBtn?.text || "Stay Logged In";
   const cancelBtnClass = cancelBtn?.class || "rst-btn rst-btn-primary";
   const cancelBtnType = cancelBtn?.type || "button";
+  const timerClass = alertTimerClass || "rst-alert-timer";
 
   const [showModal, setShowModal] = useState(false);
   const [remainingTime, setRemainingTime] = useState(0);
@@ -44,7 +45,7 @@ const ReactSessionTimeoutAlert = ({
   };
 
   // set idle time
-  const { isIdle } = useIdle({ onIdle: handleIdle, idleTime });
+  const { isIdle } = useIdle({ onIdle: handleIdle, idleTime, debounceTime });
 
   useEffect(() => {
     let interval;
@@ -64,7 +65,7 @@ const ReactSessionTimeoutAlert = ({
     };
   }, [isIdle, showModal]);
 
-  // handle session timeout after timer is down to zero and they have not clicked anything
+  // handle session timeout after timer is down to zero and user has not clicked anything
   useEffect(() => {
     if (remainingTime === 0 && showModal) {
       setShowModal(false);

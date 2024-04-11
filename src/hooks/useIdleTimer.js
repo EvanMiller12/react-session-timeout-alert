@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useIdleTimer } from "react-idle-timer";
 
-const useIdle = ({ onIdle, idleTime }) => {
+const useIdle = ({ onIdle, idleTime, debounceTime }) => {
   const [isIdle, setIsIdle] = useState(null);
 
   //handles what happens when the user is idle
@@ -13,7 +13,7 @@ const useIdle = ({ onIdle, idleTime }) => {
   const { getRemainingTime, getLastActiveTime } = useIdleTimer({
     timeout: 1000 * 60 * idleTime,
     onIdle: handleOnIdle,
-    debounce: 500
+    debounce: debounceTime
   });
   return {
     getRemainingTime,

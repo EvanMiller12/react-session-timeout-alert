@@ -15,17 +15,18 @@ The primary purpose for the alert is to logout a authenticated user after a set 
 
 | Name                 | Type     | Default                                                                   | Description                                                                                       |
 | -------------------- | -------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| idleTime             | Number   | 5                                                                         | Number of minutes before displaying alert modal                                                   |  |
-| modalTimeout         | Number   | 20                                                                        | Number of seconds for countdown before hiding alert modal and calling handleSessionTimeout method |
 | alertActionsClass    | String   | rst-alert-actions                                                         | Class for Alert Modal actions                                                                     |
 | alertContainerClass  | String   | rst-alert                                                                 | Class for Alert Modal container                                                                   |
 | alertContentClass    | String   | rst-alert-content                                                         | Class for Alert Modal content                                                                     |
 | alertTimerClass      | String   | rst-alert-timer                                                           | Class for Alert Modal timer                                                                       |
 | alertTitle           | String   | null                                                                      | Title for Alert Modal                                                                             |
 | alertDescription     | String   | null                                                                      | Description for Alert Modal                                                                       |
-| confirmBtn           | Object   | {class: "rst-btn rst-btn-primary", text: "Logout", type: "submit"}        | Title and Text for Alert submit button                                                            |
 | cancelBtn            | Object   | {class: "rst-btn rst-btn-danger", text: "Stay Logged In", type: "button"} | Title and Text for Alert cancel button                                                            |
+| confirmBtn           | Object   | {class: "rst-btn rst-btn-primary", text: "Logout", type: "submit"}        | Title and Text for Alert submit button                                                            |
+| debounceTime         | Number   | 500                                                                       | delay in ms before timer starts back due to user inactivity proceeding re-activity                |
 | handleSessionTimeout | Function | () => alert("logging out")                                                | Function to call on Alert submit button click and alert timer end                                 |
+| idleTime             | Number   | 5                                                                         | Number of minutes before displaying alert modal                                                   |  |
+| modalTimeout         | Number   | 20                                                                        | Number of seconds for countdown before hiding alert modal and calling handleSessionTimeout method |
 
 ## Basic Usage
 
@@ -46,16 +47,16 @@ import { ReactSessionTimeoutAlert } from 'react-session-timeout-alert';
 ```
 
 ## Story Book
+
 `git clone git@github.com:EvanMiller12/react-session-timeout-alert.git`
 
 `cd react-session-timeout-alert`
 
-make sure to use Node v20
+make sure to use Node >=16.0.0
 
 `npm install`
 
 `npm run storybook`
-
 
 ## Simple Example
 
@@ -63,7 +64,7 @@ make sure to use Node v20
 
 `cd react-session-timeout-alert/example`
 
-make sure to use Node >= 14
+make sure to use Node >=16.0.0
 
 `npm install`
 
