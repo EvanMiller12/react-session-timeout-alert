@@ -21,7 +21,8 @@ export default {
       include: "src/index.css",
       output: "index.css",
       exclude: ["example/**", "node_modules/**"],
-      minify: true
+      minify: true,
+      inject: true
     }),
     resolve(),
     commonjs(),

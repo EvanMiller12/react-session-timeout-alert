@@ -2,9 +2,6 @@ import React, { useState, useEffect } from "react";
 import { clsx } from 'clsx';
 import { useIdle } from "./hooks/useIdleTimer.js";
 import "./index.css";
-if (process.env.NODE_ENV === "production") {
-  require("./index.css");
-}
 
 const ReactSessionTimeoutAlert = ({
   idleTime = 5,
