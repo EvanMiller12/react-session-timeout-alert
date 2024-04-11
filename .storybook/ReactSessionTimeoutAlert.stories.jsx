@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactSessionTimeoutAlert } from "../src/index.jsx";
+import { ReactSessionTimeoutAlert } from "../dist/index.esm.js";
 
 export default {
   component: ReactSessionTimeoutAlert,
