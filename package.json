@@ -1,6 +1,6 @@
 {
   "name": "react-session-timeout-alert",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A Session Timeout Alert alert component to display after a set idle timeout of a user",
   "type": "module",
   "main": "dist/index.cjs.js",

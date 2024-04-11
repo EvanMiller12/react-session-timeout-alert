@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { clsx } from 'clsx';
 import { useIdle } from "./hooks/useIdleTimer.js";
+import { useOutsideClick } from "./hooks/useOutsideClick.js";
 import "./index.css";
 
 const ReactSessionTimeoutAlert = ({
@@ -83,6 +84,14 @@ const ReactSessionTimeoutAlert = ({
     setShowModal(false);
   };
 
+   // Execute the callback function only when anything outside of the passed ref (confirm button here) is clicked
+   const insider = useOutsideClick(handleStayLoggedIn);
+   
+   const handleOsClick = (event) => {
+    // stop event bubbling for cancel btn
+     event.stopPropagation();
+   };
+
   // convert millis to minutes and seconds
   // for remaining time display in countdown modal
   const millisToMinutesAndSeconds = millis => {
@@ -94,7 +103,7 @@ const ReactSessionTimeoutAlert = ({
   return (
     <>
       {isIdle && showModal && (
-        <div className={clsx(alertClass)}>
+        <div className={clsx(alertClass)} onClick={handleOsClick}>
           <div className={clsx(alertConClass)}>
             {alertTitle && <h2 className="rst-alert-title">{alertTitle}</h2>}
             {alertDescription && <p className="rst-alert-desc">{alertDescription}</p>}
@@ -105,7 +114,8 @@ const ReactSessionTimeoutAlert = ({
             <div className={clsx(actionsClass)}>
               <button
                 type={confirmBtnType}
-                className={confirmBtnClass} 
+                className={confirmBtnClass}
+                ref={insider}
                 onClick={handleLogOut}
               >
                 {confirmBtnText}
